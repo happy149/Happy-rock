@@ -20,9 +20,13 @@ const displaySongs = songs => {
            </audio>
         </div>
         <div class="col-md-3 text-md-right text-center">
-            <button class="btn btn-success">Get Lyrics</button>
+            <button onClick = "getLyric('${song.artist.name}','${song.preview}')" class="btn btn-success">Get Lyrics</button>
         </div>`;
         songContainer.appendChild(songDiv);
         
     })
+}
+
+const getLyric = (artist,title) => {
+    console.log (artist,title)
 }
