@@ -39,6 +39,20 @@ const getLyric = async(artist,title) => {
     disPlayLyrics(data.lyrics);
     
 }
+ 
+//if error dakhata chai
+/*const getLyric = async(artist,title) => {
+   try{ const url = `https://api.lyrics.ovh/v1/${artist}/${title}`;
+    const res = await fetch(url);
+    const data = await res.json();
+     disPlayLyrics(data.lyrics);
+}
+catch (error){
+    disPlayError('sorry! i failed to load lyrics, please try again later !!!')
+}
+
+     
+ }*/
 
 const disPlayLyrics = lyrics => {
     const lyricsDiv = document.getElementById('song-lyrics')
@@ -52,6 +66,8 @@ const disPlayLyrics = lyrics => {
     fetch(url)
     .then(res=> res.json ())
     .then(data => displaySongs(data.data))
+    //if error khai data anta then
+    .catch(error => consol.log(error));
 }
 
 const displaySongs = songs => {
